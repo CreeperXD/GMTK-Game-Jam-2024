@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
+var original_scale: Vector2
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _ready() -> void:
+	original_scale = scale
 
+func _process(delta: float) -> void:
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	scale.y -= delta
-	if scale.y < 0.5:
-		scale.y = 2
+func _on_scale_x_control_scaled(value: float) -> void:
+	scale.x = original_scale.x * value
+
+func _on_scale_y_control_scaled(value: float) -> void:
+	scale.y = original_scale.y * value

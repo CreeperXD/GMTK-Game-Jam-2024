@@ -7,7 +7,7 @@
 [node name="TestLevel" type="Node"]
 
 [node name="Ball" parent="." instance=ExtResource("1_n4irm")]
-position = Vector2(208, 40)
+position = Vector2(0, 56)
 
 [node name="Wall" parent="." instance=ExtResource("2_g8k4r")]
 position = Vector2(200, 256)
@@ -21,6 +21,3 @@ scale = Vector2(8.88, 1)
 
 [node name="Scalable" parent="." instance=ExtResource("4_13vds")]
 position = Vector2(176, 648)
-
-[node name="Scalable2" parent="." instance=ExtResource("4_13vds")]
-position = Vector2(56, 648)
