@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8uit48n7ppun"]
+
+[ext_resource type="PackedScene" uid="uid://dx3igxut0idvl" path="res://scenes/ball.tscn" id="1_n4irm"]
+[ext_resource type="PackedScene" uid="uid://8qp2xk32qdn" path="res://scenes/wall.tscn" id="2_g8k4r"]
+[ext_resource type="PackedScene" uid="uid://cs7gov05e1ci8" path="res://scenes/scalable.tscn" id="4_13vds"]
+
+[node name="TestLevel" type="Node"]
+
+[node name="Ball" parent="." instance=ExtResource("1_n4irm")]
+position = Vector2(208, 40)
+
+[node name="Wall" parent="." instance=ExtResource("2_g8k4r")]
+position = Vector2(200, 256)
+rotation = 0.134113
+scale = Vector2(8.88, 1)
+
+[node name="Wall2" parent="." instance=ExtResource("2_g8k4r")]
+position = Vector2(696, 512)
+rotation = -0.13439
+scale = Vector2(8.88, 1)
+
+[node name="Scalable" parent="." instance=ExtResource("4_13vds")]
+position = Vector2(176, 648)
+
+[node name="Scalable2" parent="." instance=ExtResource("4_13vds")]
+position = Vector2(56, 648)
