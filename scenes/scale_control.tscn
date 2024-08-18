@@ -5,22 +5,22 @@
 
 [node name="ScaleControl" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.819444
+anchor_bottom = 0.222222
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_864pt")
 script = ExtResource("2_03yqt")
+metadata/_edit_use_anchors_ = true
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 0
 offset_right = 944.0
 offset_bottom = 144.0
-min_value = 0.01
-max_value = 1.0
+min_value = 1.0
+max_value = 2.0
 step = 0.01
-value = 0.5
+value = 1.0
 tick_count = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="HSlider"]
@@ -34,9 +34,9 @@ offset_right = -64.0
 offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
-min_value = 0.01
-max_value = 1.0
-value = 0.5
+min_value = 1.0
+max_value = 2.0
+value = 1.0
 show_percentage = false
 
 [connection signal="value_changed" from="HSlider/ProgressBar" to="." method="_on_progress_bar_value_changed"]
