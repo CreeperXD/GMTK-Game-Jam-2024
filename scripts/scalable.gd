@@ -13,3 +13,5 @@ func _on_scale_x_control_scaled(value: float) -> void:
 
 func _on_scale_y_control_scaled(value: float) -> void:
 	scale.y = original_scale.y * value
+
+#BUG: ball "floating" if scale control's initial current scale value is more than 1

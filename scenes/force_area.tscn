@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://mk2j12xjmkig"]
+
+[ext_resource type="Script" path="res://scripts/force_area.gd" id="1_ajhyo"]
+[ext_resource type="Texture2D" uid="uid://bf3g51a607mrp" path="res://icon.svg" id="1_v08m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rev7"]
+size = Vector2(100, 100)
+
+[node name="ForceArea" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_ajhyo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4rev7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_v08m6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

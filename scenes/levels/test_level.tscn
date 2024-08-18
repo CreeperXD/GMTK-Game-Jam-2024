@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8uit48n7ppun"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_2dn4x"]
+[ext_resource type="PackedScene" uid="uid://dx3igxut0idvl" path="res://scenes/ball.tscn" id="2_e55y1"]
+[ext_resource type="PackedScene" uid="uid://8qp2xk32qdn" path="res://scenes/wall.tscn" id="3_2avrp"]
+[ext_resource type="PackedScene" uid="uid://cs7gov05e1ci8" path="res://scenes/scalable.tscn" id="4_fl4mi"]
+[ext_resource type="PackedScene" uid="uid://djcgy3ikoqe5y" path="res://scenes/user_interfaces/game_menu.tscn" id="5_wtlb3"]
+[ext_resource type="PackedScene" uid="uid://s6sg3q8poyy5" path="res://scenes/exit.tscn" id="6_b7tke"]
+[ext_resource type="PackedScene" uid="uid://mk2j12xjmkig" path="res://scenes/force_area.tscn" id="7_k7h6a"]
+
+[node name="TestLevel" type="Node"]
+script = ExtResource("1_2dn4x")
+
+[node name="Ball" parent="." instance=ExtResource("2_e55y1")]
+position = Vector2(-381, 7)
+
+[node name="Wall" parent="." instance=ExtResource("3_2avrp")]
+position = Vector2(200, 256)
+rotation = 0.134113
+scale = Vector2(8.88, 1)
+
+[node name="Wall3" parent="." instance=ExtResource("3_2avrp")]
+position = Vector2(-705, 157)
+scale = Vector2(8.88, 1)
+
+[node name="Wall2" parent="." instance=ExtResource("3_2avrp")]
+position = Vector2(1192, 900)
+rotation = -0.13439
+scale = Vector2(8.88, 1)
+
+[node name="Scalable" parent="." instance=ExtResource("4_fl4mi")]
+position = Vector2(568, 1156)
+
+[node name="Object" parent="Scalable" index="0"]
+scale = Vector2(2, 2)
+
+[node name="Scalable2" parent="." instance=ExtResource("4_fl4mi")]
+position = Vector2(-622, -12)
+
+[node name="Object" parent="Scalable2" index="0"]
+scale = Vector2(2, 2)
+
+[node name="GameMenu" parent="." instance=ExtResource("5_wtlb3")]
+
+[node name="Exit" parent="." instance=ExtResource("6_b7tke")]
+position = Vector2(482, 704)
+
+[node name="ForceArea" parent="." instance=ExtResource("7_k7h6a")]
+position = Vector2(531, 185)
+rotation = 0.0663989
+scale = Vector2(8.36106, 6.30827)
+
+[connection signal="entered" from="Exit" to="." method="_on_exit_entered"]
+
+[editable path="Scalable"]
+[editable path="Scalable2"]
