@@ -27,7 +27,7 @@ offset_right = 46.0
 offset_bottom = -57.0
 text = "You win!"
 
-[node name="QuitButton" type="Button" parent="VictoryMenu"]
+[node name="NextLevelButton" type="Button" parent="VictoryMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,6 +40,6 @@ offset_right = 34.0
 offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Quit"
+text = "Next level"
 
-[connection signal="pressed" from="VictoryMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VictoryMenu/NextLevelButton" to="." method="_on_next_level_button_pressed"]

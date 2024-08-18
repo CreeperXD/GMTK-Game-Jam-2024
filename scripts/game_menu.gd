@@ -9,5 +9,5 @@ func _process(delta: float) -> void:
 func show_victory_menu() -> void:
 	$VictoryMenu.show()
 
-func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+func _on_next_level_button_pressed() -> void:
+	SceneManager.change_to_next_scene()
