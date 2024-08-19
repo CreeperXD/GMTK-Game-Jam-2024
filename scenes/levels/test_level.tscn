@@ -1,32 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8uit48n7ppun"]
+[gd_scene load_steps=9 format=4 uid="uid://b8uit48n7ppun"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_2dn4x"]
-[ext_resource type="PackedScene" uid="uid://dx3igxut0idvl" path="res://scenes/ball.tscn" id="2_e55y1"]
-[ext_resource type="PackedScene" uid="uid://8qp2xk32qdn" path="res://scenes/wall.tscn" id="3_2avrp"]
+[ext_resource type="PackedScene" uid="uid://dx3igxut0idvl" path="res://scenes/knight.tscn" id="2_e55y1"]
 [ext_resource type="PackedScene" uid="uid://cs7gov05e1ci8" path="res://scenes/scalable.tscn" id="4_fl4mi"]
 [ext_resource type="PackedScene" uid="uid://djcgy3ikoqe5y" path="res://scenes/user_interfaces/game_menu.tscn" id="5_wtlb3"]
 [ext_resource type="PackedScene" uid="uid://s6sg3q8poyy5" path="res://scenes/exit.tscn" id="6_b7tke"]
 [ext_resource type="PackedScene" uid="uid://mk2j12xjmkig" path="res://scenes/force_area.tscn" id="7_k7h6a"]
+[ext_resource type="PackedScene" uid="uid://dl1hqei43t7xd" path="res://scenes/wood_support.tscn" id="8_63ysq"]
+[ext_resource type="TileSet" uid="uid://kpbnv8ipu1d3" path="res://resources/dirt_tileset.tres" id="8_kntiq"]
 
 [node name="TestLevel" type="Node"]
 script = ExtResource("1_2dn4x")
 
 [node name="Ball" parent="." instance=ExtResource("2_e55y1")]
 position = Vector2(-381, 7)
-
-[node name="Wall" parent="." instance=ExtResource("3_2avrp")]
-position = Vector2(200, 256)
-rotation = 0.134113
-scale = Vector2(8.88, 1)
-
-[node name="Wall3" parent="." instance=ExtResource("3_2avrp")]
-position = Vector2(-705, 157)
-scale = Vector2(8.88, 1)
-
-[node name="Wall2" parent="." instance=ExtResource("3_2avrp")]
-position = Vector2(1192, 900)
-rotation = -0.13439
-scale = Vector2(8.88, 1)
 
 [node name="Scalable" parent="." instance=ExtResource("4_fl4mi")]
 position = Vector2(568, 1156)
@@ -49,6 +36,30 @@ position = Vector2(482, 704)
 position = Vector2(531, 185)
 rotation = 0.0663989
 scale = Vector2(8.36106, 6.30827)
+
+[node name="DirtTileMap" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD9/wEAAAALAAAAAAD8/wEAAAAKAAAAAAD7/wEAAAAKAAAAAAD6/wEAAAAKAAAAAAD5/wEAAAAKAAAAAAD4/wIAAAAJAAMAAAD3/wIAAAAJAAMAAAD2/wIAAAAIAAMAAAD5/wIAAAAJAAMAAAD6/wIAAAAJAAMAAAD7/wIAAAAJAAMAAAD8/wIAAAAJAAMAAAD9/wIAAAALAAMAAAD2/wEAAAAIAAAAAAD3/wEAAAAKAAAAAAD4/wEAAAAKAAAAAAA=")
+tile_set = ExtResource("8_kntiq")
+
+[node name="WoodSupport" parent="." instance=ExtResource("8_63ysq")]
+position = Vector2(148, 1036)
+rotation = 0.292278
+
+[node name="WoodSupport2" parent="." instance=ExtResource("8_63ysq")]
+position = Vector2(1005, 1031)
+rotation = -0.171012
+
+[node name="WoodSupport3" parent="." instance=ExtResource("8_63ysq")]
+position = Vector2(1515, 917)
+rotation = -0.171012
+
+[node name="WoodSupport4" parent="." instance=ExtResource("8_63ysq")]
+position = Vector2(56, 280)
+rotation = 0.171042
+
+[node name="WoodSupport5" parent="." instance=ExtResource("8_63ysq")]
+position = Vector2(606, 439)
+rotation = 0.171042
 
 [connection signal="entered" from="Exit" to="." method="_on_exit_entered"]
 

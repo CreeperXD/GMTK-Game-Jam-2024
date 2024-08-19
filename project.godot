@@ -30,5 +30,5 @@ select={
 [layer_names]
 
 2d_physics/layer_1="Ball"
-2d_physics/layer_2="Wall"
+2d_physics/layer_2="Ground"
 2d_physics/layer_3="Scalable"
