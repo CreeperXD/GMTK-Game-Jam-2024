@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://wvtjpok0dq12"]
+[gd_scene load_steps=4 format=3 uid="uid://wvtjpok0dq12"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_gop6n"]
 [ext_resource type="PackedScene" uid="uid://bnkmpi7b0uqn3" path="res://scenes/user_interfaces/level_button.tscn" id="2_atqhl"]
+[ext_resource type="AudioStream" uid="uid://5i3kc7pyocjl" path="res://assets/audio/end_scale.wav" id="3_rluq3"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_gop6n")
 
 [node name="MainMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,6 +46,21 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
 
+[node name="SettingsButton" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = 36.0
+offset_right = 25.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
 [node name="QuitButton" type="Button" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = 8
@@ -60,6 +77,7 @@ grow_vertical = 2
 text = "Quit"
 
 [node name="LevelSelectMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,5 +107,144 @@ offset_top = 36.0
 offset_right = 38.0
 offset_bottom = 67.0
 
+[node name="MainMenuButton" type="Button" parent="LevelSelectMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = 36.0
+offset_right = 137.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main menu"
+
+[node name="SettingsMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicSection" type="Control" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -20.0
+offset_right = 252.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/MusicSection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 0.01875
+anchor_bottom = 0.2
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsMenu/MusicSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -10.0
+max_value = 10.0
+step = 0.1
+
+[node name="SoundEffectsSection" type="Control" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 28.0
+offset_right = 252.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/SoundEffectsSection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 0.01875
+anchor_bottom = 0.2
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sound effects"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SoundEffectsVolumeSlider" type="HSlider" parent="SettingsMenu/SoundEffectsSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -10.0
+max_value = 10.0
+step = 0.1
+
+[node name="EndScalePlayer" type="AudioStreamPlayer2D" parent="SettingsMenu/SoundEffectsSection"]
+stream = ExtResource("3_rluq3")
+
+[node name="Label" type="Label" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -100.0
+offset_right = 30.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="MainMenuButton" type="Button" parent="SettingsMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 204.0
+offset_right = 56.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main menu"
+
 [connection signal="pressed" from="MainMenu/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="LevelSelectMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="value_changed" from="SettingsMenu/MusicSection/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="drag_ended" from="SettingsMenu/SoundEffectsSection/SoundEffectsVolumeSlider" to="." method="_on_sound_effects_volume_slider_drag_ended"]
+[connection signal="pressed" from="SettingsMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

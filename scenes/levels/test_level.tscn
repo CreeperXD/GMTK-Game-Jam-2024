@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=4 uid="uid://b8uit48n7ppun"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_2dn4x"]
-[ext_resource type="PackedScene" uid="uid://dx3igxut0idvl" path="res://scenes/knight.tscn" id="2_e55y1"]
-[ext_resource type="PackedScene" uid="uid://cs7gov05e1ci8" path="res://scenes/scalable.tscn" id="4_fl4mi"]
+[ext_resource type="PackedScene" uid="uid://dx3igxut0idvl" path="res://scenes/gameplay/knight.tscn" id="2_e55y1"]
+[ext_resource type="PackedScene" uid="uid://cs7gov05e1ci8" path="res://scenes/gameplay/scalable.tscn" id="4_fl4mi"]
 [ext_resource type="PackedScene" uid="uid://djcgy3ikoqe5y" path="res://scenes/user_interfaces/game_menu.tscn" id="5_wtlb3"]
-[ext_resource type="PackedScene" uid="uid://s6sg3q8poyy5" path="res://scenes/exit.tscn" id="6_b7tke"]
-[ext_resource type="PackedScene" uid="uid://mk2j12xjmkig" path="res://scenes/force_area.tscn" id="7_k7h6a"]
-[ext_resource type="PackedScene" uid="uid://dl1hqei43t7xd" path="res://scenes/wood_support.tscn" id="8_63ysq"]
+[ext_resource type="PackedScene" uid="uid://s6sg3q8poyy5" path="res://scenes/gameplay/exit.tscn" id="6_b7tke"]
+[ext_resource type="PackedScene" uid="uid://mk2j12xjmkig" path="res://scenes/gameplay/force_area.tscn" id="7_k7h6a"]
+[ext_resource type="PackedScene" uid="uid://dl1hqei43t7xd" path="res://scenes/gameplay/wood_support.tscn" id="8_63ysq"]
 [ext_resource type="TileSet" uid="uid://kpbnv8ipu1d3" path="res://resources/dirt_tileset.tres" id="8_kntiq"]
 
 [node name="TestLevel" type="Node"]

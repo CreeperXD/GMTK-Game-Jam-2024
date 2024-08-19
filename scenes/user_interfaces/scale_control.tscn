@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqca6gy0b43h6"]
+[gd_scene load_steps=5 format=3 uid="uid://dqca6gy0b43h6"]
 
 [ext_resource type="Theme" uid="uid://b1u6ta00sppfr" path="res://resources/scale_control.tres" id="1_864pt"]
 [ext_resource type="Script" path="res://scripts/scale_control.gd" id="2_03yqt"]
+[ext_resource type="AudioStream" uid="uid://rgdpdqvc5q2u" path="res://assets/audio/start_scale.wav" id="3_iusnd"]
+[ext_resource type="AudioStream" uid="uid://5i3kc7pyocjl" path="res://assets/audio/end_scale.wav" id="4_as854"]
 
 [node name="ScaleControl" type="Control"]
 layout_mode = 3
@@ -39,4 +41,12 @@ max_value = 2.0
 value = 1.0
 show_percentage = false
 
+[node name="StartScalePlayer" type="AudioStreamPlayer2D" parent="HSlider"]
+stream = ExtResource("3_iusnd")
+
+[node name="EndScalePlayer" type="AudioStreamPlayer2D" parent="HSlider"]
+stream = ExtResource("4_as854")
+
+[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="drag_started" from="HSlider" to="." method="_on_h_slider_drag_started"]
 [connection signal="value_changed" from="HSlider/ProgressBar" to="." method="_on_progress_bar_value_changed"]
