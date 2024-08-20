@@ -157,7 +157,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="MusicVolumeSlider" type="HSlider" parent="SettingsMenu/MusicSection"]
+[node name="MusicSlider" type="HSlider" parent="SettingsMenu/MusicSection"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -165,11 +165,11 @@ anchor_bottom = 1.0
 offset_left = 128.0
 grow_horizontal = 2
 grow_vertical = 2
-min_value = -10.0
+min_value = -20.0
 max_value = 10.0
 step = 0.1
 
-[node name="SoundEffectsSection" type="Control" parent="SettingsMenu"]
+[node name="SFXSection" type="Control" parent="SettingsMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -183,7 +183,7 @@ offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="SettingsMenu/SoundEffectsSection"]
+[node name="Label" type="Label" parent="SettingsMenu/SFXSection"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.2
@@ -196,7 +196,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="SoundEffectsVolumeSlider" type="HSlider" parent="SettingsMenu/SoundEffectsSection"]
+[node name="SFXSlider" type="HSlider" parent="SettingsMenu/SFXSection"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -204,11 +204,11 @@ anchor_bottom = 1.0
 offset_left = 128.0
 grow_horizontal = 2
 grow_vertical = 2
-min_value = -10.0
+min_value = -20.0
 max_value = 10.0
 step = 0.1
 
-[node name="EndScalePlayer" type="AudioStreamPlayer2D" parent="SettingsMenu/SoundEffectsSection"]
+[node name="EndScalePlayer" type="AudioStreamPlayer2D" parent="SettingsMenu/SFXSection"]
 stream = ExtResource("3_rluq3")
 
 [node name="Label" type="Label" parent="SettingsMenu"]
@@ -245,6 +245,6 @@ text = "Main menu"
 [connection signal="pressed" from="MainMenu/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="LevelSelectMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="value_changed" from="SettingsMenu/MusicSection/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
-[connection signal="drag_ended" from="SettingsMenu/SoundEffectsSection/SoundEffectsVolumeSlider" to="." method="_on_sound_effects_volume_slider_drag_ended"]
+[connection signal="value_changed" from="SettingsMenu/MusicSection/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="SettingsMenu/SFXSection/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="pressed" from="SettingsMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

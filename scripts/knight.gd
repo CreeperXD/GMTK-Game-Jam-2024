@@ -7,4 +7,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node) -> void:
-	$GruntPlayer.play()
+	AudioManager.play_sfx(2)

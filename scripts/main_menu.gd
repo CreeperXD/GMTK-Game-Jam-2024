@@ -30,10 +30,10 @@ func _on_quit_button_pressed() -> void:
 func _on_main_menu_button_pressed() -> void:
 	show_main_menu()
 
-func _on_music_volume_slider_value_changed(value: float) -> void:
-	Options.music_volume = value
+func _on_music_slider_value_changed(value: float) -> void:
+	AudioManager.music_volume = value
 
-func _on_sound_effects_volume_slider_drag_ended(value_changed: bool) -> void:
-	Options.sound_effects_volume = $SettingsMenu/SoundEffectsSection/SoundEffectsVolumeSlider.value
-	$SettingsMenu/SoundEffectsSection/EndScalePlayer.play()
+func _on_sfx_slider_drag_ended(value_changed: bool) -> void:
+	AudioManager.sfx_volume = $SettingsMenu/SFXSection/SFXSlider.value
+	AudioManager.play_sfx(1)
 	#TODO: continue implementing, maybe create audiomanager

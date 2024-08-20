@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx3igxut0idvl"]
+[gd_scene load_steps=5 format=3 uid="uid://dx3igxut0idvl"]
 
 [ext_resource type="Script" path="res://scripts/knight.gd" id="1_r85el"]
 [ext_resource type="Texture2D" uid="uid://dq5gf1wgvndjc" path="res://assets/sprites/Knight.png" id="1_yov0g"]
-[ext_resource type="AudioStream" uid="uid://b17n0hg6m7d3l" path="res://assets/audio/grunt.wav" id="3_whie3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4o6h0"]
 bounce = 0.5
@@ -31,8 +30,5 @@ region_rect = Rect2(5, 5, 5, 5)
 position_smoothing_enabled = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
-
-[node name="GruntPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_whie3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

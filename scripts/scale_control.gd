@@ -14,7 +14,7 @@ func _on_progress_bar_value_changed(value: float) -> void:
 	scaled.emit(value)
 
 func _on_h_slider_drag_started() -> void:
-	$HSlider/StartScalePlayer.play()
+	AudioManager.play_sfx(0)
 
 func _on_h_slider_drag_ended(value_changed: bool) -> void:
-	$HSlider/EndScalePlayer.play()
+	AudioManager.play_sfx(1)
