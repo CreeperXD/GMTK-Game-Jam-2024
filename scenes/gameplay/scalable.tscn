@@ -1,39 +1,74 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs7gov05e1ci8"]
+[gd_scene load_steps=8 format=3 uid="uid://cs7gov05e1ci8"]
 
-[ext_resource type="Texture2D" uid="uid://bf3g51a607mrp" path="res://icon.svg" id="1_hqcov"]
 [ext_resource type="Script" path="res://scripts/scalable.gd" id="1_sijlh"]
+[ext_resource type="Texture2D" uid="uid://cdk7lmwqdo2su" path="res://assets/sprites/Scalable.png" id="2_3yae8"]
 [ext_resource type="PackedScene" uid="uid://dqca6gy0b43h6" path="res://scenes/user_interfaces/scale_control.tscn" id="3_7wt5c"]
+[ext_resource type="Theme" uid="uid://2hebli8q7byf" path="res://resources/scale_y_control.tres" id="4_ole64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o471"]
 size = Vector2(100, 100)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aca1v"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(50, 50, 1)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 10.0
+color = Color(1, 0.392157, 0, 0.392157)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qsdh0"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 10.0
+color = Color(1, 0.392157, 0, 0.392157)
+
 [node name="Scalable" type="Node2D"]
+script = ExtResource("1_sijlh")
 
 [node name="Object" type="CharacterBody2D" parent="."]
 collision_layer = 4
 collision_mask = 0
 input_pickable = true
-script = ExtResource("1_sijlh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
 shape = SubResource("RectangleShape2D_2o471")
 
 [node name="Sprite2D" type="Sprite2D" parent="Object/CollisionShape2D"]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_hqcov")
+texture = ExtResource("2_3yae8")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Object"]
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_aca1v")
+lifetime = 5.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Object"]
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_qsdh0")
+lifetime = 5.0
 
 [node name="ScaleXControl" parent="." instance=ExtResource("3_7wt5c")]
-offset_top = -36.0
-offset_bottom = -36.0
+offset_top = -25.0
+offset_bottom = 75.0
 scale = Vector2(0.5, 0.5)
 max_scale_value = 5.0
 
 [node name="ScaleYControl" parent="." instance=ExtResource("3_7wt5c")]
-offset_left = -36.0
-offset_right = -36.0
+offset_left = -25.0
+offset_top = 0.0
+offset_right = 975.0
+offset_bottom = 100.0
 rotation = -1.57079
 scale = Vector2(0.5, 0.5)
+theme = ExtResource("4_ole64")
 max_scale_value = 5.0
 
-[connection signal="scaled" from="ScaleXControl" to="Object" method="_on_scale_x_control_scaled"]
-[connection signal="scaled" from="ScaleYControl" to="Object" method="_on_scale_y_control_scaled"]
+[connection signal="scaled" from="ScaleXControl" to="." method="_on_scale_x_control_scaled"]
+[connection signal="scaled" from="ScaleYControl" to="." method="_on_scale_y_control_scaled"]

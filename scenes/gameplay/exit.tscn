@@ -1,10 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://s6sg3q8poyy5"]
+[gd_scene load_steps=5 format=3 uid="uid://s6sg3q8poyy5"]
 
 [ext_resource type="Script" path="res://scripts/exit.gd" id="1_5itfm"]
-[ext_resource type="Texture2D" uid="uid://bf3g51a607mrp" path="res://icon.svg" id="1_6j57a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cctk1"]
 size = Vector2(100, 100)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6k6oo"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(50, 50, 0)
+direction = Vector3(0, 0, 0)
+spread = 0.0
+radial_velocity_min = -100.0
+radial_velocity_max = -50.0
+gravity = Vector3(0, 0, 0)
+color = Color(1, 1, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_otoqw"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(50, 50, 0)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 25.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 10.0
+color = Color(1, 1, 0, 0.196078)
 
 [node name="Exit" type="Area2D"]
 collision_layer = 0
@@ -13,8 +36,17 @@ script = ExtResource("1_5itfm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cctk1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_6j57a")
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_6k6oo")
+lifetime = 5.0
+trail_enabled = true
+trail_lifetime = 0.5
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_otoqw")
+lifetime = 5.0
+trail_lifetime = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

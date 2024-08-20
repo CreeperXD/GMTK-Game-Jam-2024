@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b1u6ta00sppfr"]
+
+[ext_resource type="Texture2D" uid="uid://bf3g51a607mrp" path="res://icon.svg" id="1_f6gvi"]
+[ext_resource type="Texture2D" uid="uid://ddfvx0eil2j7o" path="res://assets/sprites/Red scale gizmo.png" id="2_bmcm1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rssfw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hocuv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18rsc"]
+bg_color = Color(1, 0, 0, 1)
+
+[resource]
+/icons/test = ExtResource("1_f6gvi")
+HSlider/icons/grabber = ExtResource("2_bmcm1")
+HSlider/icons/grabber_highlight = ExtResource("2_bmcm1")
+HSlider/styles/slider = SubResource("StyleBoxEmpty_rssfw")
+ProgressBar/styles/background = SubResource("StyleBoxEmpty_hocuv")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_18rsc")

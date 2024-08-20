@@ -34,7 +34,7 @@ position = Vector2(482, 704)
 
 [node name="ForceArea" parent="." instance=ExtResource("7_k7h6a")]
 position = Vector2(531, 185)
-rotation = 0.0663989
+rotation = -3.02215
 scale = Vector2(8.36106, 6.30827)
 
 [node name="DirtTileMap" type="TileMapLayer" parent="."]

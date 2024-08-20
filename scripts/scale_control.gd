@@ -5,7 +5,7 @@ extends Control
 
 signal scaled(value: float)
 
-func _ready() -> void:
+func initialise() -> void:
 	$HSlider.share($HSlider/ProgressBar)
 	$HSlider.max_value = max_scale_value
 	$HSlider.value = current_scale_value
