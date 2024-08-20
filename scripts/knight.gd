@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 func _ready() -> void:
-	$AudioListener2D.make_current()
+	pass
 	
 func _process(delta: float) -> void:
 	pass

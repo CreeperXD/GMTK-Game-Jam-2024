@@ -36,4 +36,9 @@ func _on_music_slider_value_changed(value: float) -> void:
 func _on_sfx_slider_drag_ended(value_changed: bool) -> void:
 	AudioManager.sfx_volume = $SettingsMenu/SFXSection/SFXSlider.value
 	AudioManager.play_sfx(1)
-	#TODO: continue implementing, maybe create audiomanager
+
+func _on_button_hover() -> void:
+	AudioManager.play_sfx(3)
+
+func _on_button_click() -> void:
+	AudioManager.play_sfx(4)

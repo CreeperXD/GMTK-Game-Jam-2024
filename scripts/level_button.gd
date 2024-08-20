@@ -7,3 +7,7 @@ func _ready():
 
 func _on_pressed():
 	SceneManager.change_scene(level)
+	AudioManager.play_sfx(4)
+
+func _on_mouse_entered() -> void:
+	AudioManager.play_sfx(3)

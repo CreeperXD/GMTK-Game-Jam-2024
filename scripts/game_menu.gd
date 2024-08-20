@@ -31,3 +31,9 @@ func _on_main_menu_button_pressed() -> void:
 func _on_resume_button_pressed() -> void:
 	get_tree().paused = false
 	$PauseMenu.hide()
+
+func _on_button_hover() -> void:
+	AudioManager.play_sfx(3)
+
+func _on_button_click() -> void:
+	AudioManager.play_sfx(4)

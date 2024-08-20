@@ -18,5 +18,9 @@ func play_sfx(sfx: SoundEffects) -> void:
 			$SFXPlayers/EndScalePlayer.play()
 		2:
 			$SFXPlayers/GruntPlayer.play()
+		3:
+			$SFXPlayers/ButtonHoverPlayer.play()
+		4:
+			$SFXPlayers/ButtonClickPlayer.play()
 		_:
 			push_warning("No such sound effect")
