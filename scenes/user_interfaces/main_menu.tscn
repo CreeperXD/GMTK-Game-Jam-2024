@@ -94,10 +94,50 @@ text = "Select level"
 
 [node name="Level1Button" parent="LevelSelectMenu" instance=ExtResource("2_atqhl")]
 layout_mode = 1
-offset_left = -24.0
-offset_top = 36.0
-offset_right = 38.0
-offset_bottom = 67.0
+offset_left = -288.0
+offset_top = -89.5
+offset_right = -113.0
+offset_bottom = -12.5
+
+[node name="Level1Button2" parent="LevelSelectMenu" instance=ExtResource("2_atqhl")]
+layout_mode = 1
+offset_left = -87.5
+offset_top = -92.0
+offset_right = 87.5
+offset_bottom = -15.0
+level = 2
+
+[node name="Level1Button3" parent="LevelSelectMenu" instance=ExtResource("2_atqhl")]
+layout_mode = 1
+offset_left = 112.0
+offset_top = -89.5
+offset_right = 287.0
+offset_bottom = -12.5
+level = 3
+
+[node name="Level1Button4" parent="LevelSelectMenu" instance=ExtResource("2_atqhl")]
+layout_mode = 1
+offset_left = -288.0
+offset_top = 17.0
+offset_right = -113.0
+offset_bottom = 94.0
+level = 4
+
+[node name="Level1Button5" parent="LevelSelectMenu" instance=ExtResource("2_atqhl")]
+layout_mode = 1
+offset_left = -87.5
+offset_top = 14.5
+offset_right = 87.5
+offset_bottom = 91.5
+level = 5
+
+[node name="Level1Button6" parent="LevelSelectMenu" instance=ExtResource("2_atqhl")]
+layout_mode = 1
+offset_left = 112.0
+offset_top = 17.0
+offset_right = 287.0
+offset_bottom = 94.0
+level = 6
 
 [node name="MainMenuButton" type="Button" parent="LevelSelectMenu"]
 layout_mode = 1
