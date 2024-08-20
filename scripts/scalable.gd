@@ -17,4 +17,4 @@ func _on_scale_x_control_scaled(value: float) -> void:
 func _on_scale_y_control_scaled(value: float) -> void:
 	object.scale.y = original_scale.y * value
 
-#BUG: ball "floating" if scale control's initial current scale value is more than 1
+#BUG: ball not registering new collision shape if scale control's initial current scale value is not 1

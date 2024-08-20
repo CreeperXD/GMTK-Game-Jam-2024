@@ -8,4 +8,4 @@ func _process(delta: float) -> void:
 
 func _on_exit_entered() -> void:
 	$GameMenu.hide_pause_button()
-	$GameMenu.show_victory_menu()
+	$GameMenu.show_level_complete_menu()

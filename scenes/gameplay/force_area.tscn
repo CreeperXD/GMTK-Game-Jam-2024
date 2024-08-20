@@ -31,6 +31,7 @@ color = Color(1, 0, 1, 1)
 [node name="ForceArea" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_ajhyo")
+strength = 2500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4rev7")

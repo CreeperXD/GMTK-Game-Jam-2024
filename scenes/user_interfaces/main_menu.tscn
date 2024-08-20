@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://wvtjpok0dq12"]
+[gd_scene load_steps=5 format=3 uid="uid://wvtjpok0dq12"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_gop6n"]
+[ext_resource type="Theme" uid="uid://ow044r6rkkxp" path="res://resources/user_interface.tres" id="2_0vcrk"]
 [ext_resource type="PackedScene" uid="uid://bnkmpi7b0uqn3" path="res://scenes/user_interfaces/level_button.tscn" id="2_atqhl"]
+[ext_resource type="Texture2D" uid="uid://or80df4dauot" path="res://assets/sprites/Title.png" id="3_w1duc"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_gop6n")
@@ -14,21 +16,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_0vcrk")
 
-[node name="Label" type="Label" parent="MainMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "game name"
+[node name="Title" type="Sprite2D" parent="MainMenu"]
+position = Vector2(960, 400)
+scale = Vector2(0.404, 0.404)
+texture = ExtResource("3_w1duc")
 
 [node name="PlayButton" type="Button" parent="MainMenu"]
 layout_mode = 1
@@ -37,10 +30,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -112.0
-offset_top = 44.0
-offset_right = -104.0
-offset_bottom = 52.0
+offset_left = -360.0
+offset_top = 164.0
+offset_right = -251.0
+offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
@@ -52,10 +45,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = 36.0
-offset_right = 25.0
-offset_bottom = 67.0
+offset_left = -104.0
+offset_top = 164.0
+offset_right = 97.0
+offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Settings"
@@ -67,22 +60,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 96.0
-offset_top = 36.0
-offset_right = 137.0
-offset_bottom = 67.0
+offset_left = 248.0
+offset_top = 164.0
+offset_right = 361.0
+offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
 
 [node name="LevelSelectMenu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_0vcrk")
 
 [node name="Label" type="Label" parent="LevelSelectMenu"]
 layout_mode = 1
@@ -91,10 +84,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -136.0
+offset_top = -236.0
+offset_right = 133.0
+offset_bottom = -167.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Select level"
@@ -113,21 +106,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 96.0
-offset_top = 36.0
-offset_right = 137.0
-offset_bottom = 67.0
+offset_left = -144.0
+offset_top = 164.0
+offset_right = 138.0
+offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main menu"
 
 [node name="SettingsMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_0vcrk")
 
 [node name="MusicSection" type="Control" parent="SettingsMenu"]
 layout_mode = 1
@@ -137,31 +132,32 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -248.0
-offset_top = -20.0
+offset_top = -90.0
 offset_right = 252.0
-offset_bottom = 20.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="SettingsMenu/MusicSection"]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.2
-anchor_right = 0.01875
-anchor_bottom = 0.2
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_right = 141.0
+offset_bottom = 34.5
+grow_vertical = 2
 text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="MusicSlider" type="HSlider" parent="SettingsMenu/MusicSection"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 128.0
+offset_left = 152.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = -20.0
@@ -176,31 +172,32 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -248.0
-offset_top = 28.0
+offset_top = 10.0
 offset_right = 252.0
-offset_bottom = 68.0
+offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="SettingsMenu/SFXSection"]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.2
-anchor_right = 0.01875
-anchor_bottom = 0.2
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Sound effects"
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_right = 85.0
+offset_bottom = 34.5
+grow_vertical = 2
+text = "SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="SFXSlider" type="HSlider" parent="SettingsMenu/SFXSection"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 128.0
+offset_left = 152.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = -20.0
@@ -214,10 +211,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -100.0
-offset_right = 30.0
-offset_bottom = -77.0
+offset_left = -96.0
+offset_top = -236.0
+offset_right = 97.0
+offset_bottom = -167.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Settings"
@@ -229,10 +226,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = 204.0
-offset_right = 56.0
-offset_bottom = 235.0
+offset_left = -144.0
+offset_top = 164.0
+offset_right = 138.0
+offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main menu"

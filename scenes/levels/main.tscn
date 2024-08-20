@@ -5,3 +5,11 @@
 [node name="Main" type="Node"]
 
 [node name="MainMenu" parent="." instance=ExtResource("1_dgtrb")]
+
+[node name="Backgroiund" type="ColorRect" parent="."]
+offset_left = 3264.0
+offset_top = -1144.0
+offset_right = 3306.0
+offset_bottom = -810.0
+scale = Vector2(-174.686, 14.0982)
+color = Color(0.196078, 0.0980392, 0, 1)

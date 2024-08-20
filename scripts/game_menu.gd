@@ -1,14 +1,14 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	$VictoryMenu.hide()
+	$LevelCompleteMenu.hide()
 	$PauseMenu.hide()
 
 func _process(delta: float) -> void:
 	pass
 
-func show_victory_menu() -> void:
-	$VictoryMenu.show()
+func show_level_complete_menu() -> void:
+	$LevelCompleteMenu.show()
 
 func hide_pause_button() -> void:
 	$PauseButton.hide()

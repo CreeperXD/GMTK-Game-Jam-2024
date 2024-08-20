@@ -1,11 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://djcgy3ikoqe5y"]
+[gd_scene load_steps=3 format=3 uid="uid://djcgy3ikoqe5y"]
 
 [ext_resource type="Script" path="res://scripts/game_menu.gd" id="1_8ii7l"]
+[ext_resource type="Theme" uid="uid://ow044r6rkkxp" path="res://resources/user_interface.tres" id="2_tjiqe"]
 
 [node name="GameMenu" type="CanvasLayer"]
 script = ExtResource("1_8ii7l")
 
-[node name="VictoryMenu" type="Control" parent="."]
+[node name="LevelCompleteMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -18,26 +19,34 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tjiqe")
 
-[node name="Label" type="Label" parent="VictoryMenu"]
-layout_mode = 0
-offset_left = -20.0
-offset_top = -80.0
-offset_right = 46.0
-offset_bottom = -57.0
-text = "You win!"
-
-[node name="NextLevelButton" type="Button" parent="VictoryMenu"]
+[node name="Label" type="Label" parent="LevelCompleteMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = 28.0
-offset_right = 34.0
-offset_bottom = 59.0
+offset_left = -192.0
+offset_top = -236.0
+offset_right = 186.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level complete!"
+
+[node name="NextLevelButton" type="Button" parent="LevelCompleteMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -38.5
+offset_right = 124.0
+offset_bottom = 38.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Next level"
@@ -46,12 +55,13 @@ text = "Next level"
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -96.0
-offset_top = 40.0
-offset_right = -41.0
-offset_bottom = 71.0
+offset_left = -256.0
+offset_top = 104.0
+offset_right = -103.0
+offset_bottom = 181.0
 grow_horizontal = 0
-text = "pause"
+theme = ExtResource("2_tjiqe")
+text = "Pause"
 
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 2
@@ -61,6 +71,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tjiqe")
 
 [node name="RestartButton" type="Button" parent="PauseMenu"]
 layout_mode = 1
@@ -69,10 +80,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -12.0
-offset_right = -63.0
-offset_bottom = 19.0
+offset_left = -392.0
+offset_top = -38.0
+offset_right = -209.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Restart"
@@ -84,10 +95,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -12.0
-offset_right = 33.0
-offset_bottom = 19.0
+offset_left = -141.0
+offset_top = -38.5
+offset_right = 141.0
+offset_bottom = 38.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main menu"
@@ -99,10 +110,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 64.0
-offset_top = -12.0
-offset_right = 134.0
-offset_bottom = 19.0
+offset_left = 200.0
+offset_top = -38.0
+offset_right = 401.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Resume"
@@ -114,17 +125,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -52.0
-offset_right = 33.0
-offset_bottom = -29.0
+offset_left = -88.0
+offset_top = -236.0
+offset_right = 88.0
+offset_bottom = -167.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Paused"
 
-[connection signal="mouse_entered" from="VictoryMenu/NextLevelButton" to="." method="_on_button_hover"]
-[connection signal="pressed" from="VictoryMenu/NextLevelButton" to="." method="_on_button_click"]
-[connection signal="pressed" from="VictoryMenu/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="mouse_entered" from="LevelCompleteMenu/NextLevelButton" to="." method="_on_button_hover"]
+[connection signal="pressed" from="LevelCompleteMenu/NextLevelButton" to="." method="_on_button_click"]
+[connection signal="pressed" from="LevelCompleteMenu/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="mouse_entered" from="PauseButton" to="." method="_on_button_hover"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_button_click"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
